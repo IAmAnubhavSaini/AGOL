@@ -42,10 +42,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Being.cs" />
+    <Compile Include="Community.cs" />
     <Compile Include="Interfaces\ISayDiagnosticThings.cs" />
     <Compile Include="LifeGoesOn.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Runs\r0.cs" />
+    <Compile Include="Runs\r1.cs" />
     <Compile Include="Traits.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,3 +1,5 @@
 *.exe
 *.pdb
 *.suo
+*.txt
+*.cache
