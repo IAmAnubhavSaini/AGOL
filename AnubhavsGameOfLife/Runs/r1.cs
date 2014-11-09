@@ -12,11 +12,12 @@ namespace AnubhavsGameOfLife.Runs
     /// </summary>
     public class r1
     {
+        private static int beingCountUnderRun = 10;
         public static void Run()
         {
             Being b;
             List<Being> beings = new List<Being>();
-            for (int i = 0; i < 1000; ++i)
+            for (int i = 0; i < beingCountUnderRun; ++i)
             {
                 b = new Being();
                 beings.Add(b);
