@@ -21,7 +21,8 @@ namespace AnubhavsGameOfLife
                 return false;
             }
             int matchedTraits = 0;
-            foreach (var trait in Traits.Persona)
+            // this change makes the weightage important.
+            foreach (var trait in Traits.Persona.Where(r=>r.Value.Weightage>0))
             {
                 if (((Being)obj).Traits.Persona.ContainsKey(trait.Key))
                 {

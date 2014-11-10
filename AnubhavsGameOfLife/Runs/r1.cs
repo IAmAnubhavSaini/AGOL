@@ -12,7 +12,7 @@ namespace AnubhavsGameOfLife.Runs
     /// </summary>
     public class r1
     {
-        private static int beingCountUnderRun = 10;
+        private static int beingCountUnderRun = 100;
         public static void Run()
         {
             Being b;

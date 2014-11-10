@@ -29,10 +29,16 @@ namespace AnubhavsGameOfLife
     {
 
         public int Value { get; private set; }
-
+        public int Weightage { get; private set; }
         public Trait(int val)
         {
             Value = val;
+            Weightage = 0;
+        }
+
+        public void IncrementWeightage()
+        {
+            Weightage += 1;
         }
     }
 
@@ -53,6 +59,10 @@ namespace AnubhavsGameOfLife
                 if (!Persona.ContainsKey(t.Value))
                 {
                     Persona[t.Value] = t;
+                }
+                else
+                {
+                    Persona[t.Value].IncrementWeightage();
                 }
                 // this leads to some Beings having lesser traits. But it all works out well.
             }
