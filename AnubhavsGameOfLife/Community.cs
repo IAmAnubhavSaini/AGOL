@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AnubhavsGameOfLife
 {
@@ -32,19 +30,10 @@ namespace AnubhavsGameOfLife
         }
         internal void FillCommonTraits(Being b1, Being b2)
         {
-            foreach (var t in b1.Traits.Persona)
+            foreach (var t in b1.Traits.Persona.Where(t => b2.Traits.Persona.Any(u => t.Key == u.Key)))
             {
-                foreach (var u in b2.Traits.Persona)
-                {
-                    if (t.Key == u.Key)
-                    {
-                        CommonTraits.Add(new Trait(t.Key));
-                        break;
-                    }
-                }
+                CommonTraits.Add(new Trait(t.Key));
             }
-
         }
-            
     }
 }

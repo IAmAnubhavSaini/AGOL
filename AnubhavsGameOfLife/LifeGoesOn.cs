@@ -1,9 +1,5 @@
 ﻿using AnubhavsGameOfLife.Interfaces;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AnubhavsGameOfLife
 {
@@ -15,24 +11,24 @@ namespace AnubhavsGameOfLife
 
     class Life : IMakeLifeGoOn, ISayDiagnosticThings
     {
-        private double age;
-        private double ageIncrement;
-        private static Random ageIncrementFactorGenerator;
+        private double _age;
+        private double _ageIncrement;
+        private static readonly Random AgeIncrementFactorGenerator;
 
 
         static Life()
         {
-            ageIncrementFactorGenerator = new Random(1);
+            AgeIncrementFactorGenerator = new Random(1);
         }
         public void MakeLife()
         {
-            ageIncrement = 0.75 + 1*ageIncrementFactorGenerator.NextDouble();
-            age += ageIncrement;
+            _ageIncrement = 0.75 + 1*AgeIncrementFactorGenerator.NextDouble();
+            _age += _ageIncrement;
         }
 
         public string SpillBeans()
         {
-            return "Age: " + age.ToString();
+            return "Age: " + _age.ToString();
         }
     }
 }

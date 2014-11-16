@@ -1,23 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AnubhavsGameOfLife
 {
     public static class TraitFactory
     {
-        private static Random randomNumberGenerator;
-        private static int upperLimitForRandom = 100;
-        private static int lowerLimitForRandom = 0;
+        private static readonly Random RandomNumberGenerator;
+        private const int UpperLimitForRandom = 100;
+        private const int LowerLimitForRandom = 0;
+
         static TraitFactory()
         {
-            randomNumberGenerator = new Random(1);
+            RandomNumberGenerator = new Random(1);
         }
         public static Trait GenerateTrait()
         {
-            int t = (randomNumberGenerator.Next(lowerLimitForRandom, upperLimitForRandom) * (Convert.ToInt32(DateTime.Now.Ticks & 0x000000007FFFFFFF))) % upperLimitForRandom;
+            var t = (RandomNumberGenerator.Next(LowerLimitForRandom, UpperLimitForRandom) * (Convert.ToInt32(DateTime.Now.Ticks & 0x000000007FFFFFFF))) % UpperLimitForRandom;
             if (t < 0)
             {
                 t *= -1;
@@ -44,17 +42,16 @@ namespace AnubhavsGameOfLife
 
     public class Traits
     {
-        private int numberOfTraitsABeingCanHave = 15;
+        private const int NumberOfTraitsABeingCanHave = 15;
         public Dictionary<int, Trait> Persona;
 
         private void Instantiate()
         {
             Persona = new Dictionary<int, Trait>();
-            Trait t;
-            for (int i = 0; i < numberOfTraitsABeingCanHave; ++i)
+            for (var i = 0; i < NumberOfTraitsABeingCanHave; ++i)
             {
                 // here we generate a trait
-                t = TraitFactory.GenerateTrait();
+                var t = TraitFactory.GenerateTrait();
                 // here if the trait is already there, we kind of leave it.
                 if (!Persona.ContainsKey(t.Value))
                 {

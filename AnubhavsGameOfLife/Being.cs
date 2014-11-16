@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 
 namespace AnubhavsGameOfLife
 {
@@ -20,20 +16,9 @@ namespace AnubhavsGameOfLife
             {
                 return false;
             }
-            int matchedTraits = 0;
+            var matchedTraits = Traits.Persona.Where(r => r.Value.Weightage > 0).Count(trait => ((Being) obj).Traits.Persona.ContainsKey(trait.Key));
             // this change makes the weightage important.
-            foreach (var trait in Traits.Persona.Where(r=>r.Value.Weightage>0))
-            {
-                if (((Being)obj).Traits.Persona.ContainsKey(trait.Key))
-                {
-                    matchedTraits++;
-                }
-            }
-            if(matchedTraits >= Traits.Persona.Count/2)
-            {
-                return true;
-            }
-            return false;
+            return matchedTraits >= Traits.Persona.Count/2;
         }
 
         public override int GetHashCode()

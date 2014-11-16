@@ -1,26 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AnubhavsGameOfLife.Runs
 {
-    public class r0
+    public class R0
     {
         public static void Run()
         {
-            Being b1 = new Being();
-            Being b2 = new Being();
-            int i = 0;
+            var b1 = new Being();
+            var b2 = new Being();
+            var i = 0;
             while (i < 10000)
             {
                 i++;
-                if (!b1.Equals(b2))
-                {
-                    // Console.WriteLine(i.ToString() + ". Being b1 and b2 don't have compatibility.");
-                }
-                else
+                if (b1.Equals(b2))
                 {
                     Console.WriteLine(i.ToString() + ". Being b1 and b2 have compatibility.");
                 }
