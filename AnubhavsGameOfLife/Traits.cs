@@ -44,14 +44,14 @@ namespace AnubhavsGameOfLife
             Persona = new Dictionary<int, Trait>();
             for (var i = 0; i < NumberOfTraitsABeingCanHave; ++i)
             {
-                // here we generate a trait
                 var t = TraitFactory.GenerateTrait();
-                // here if the trait is already there, we kind of leave it.
                 if (!Persona.ContainsKey(t.Value))
                 {
                     Persona[t.Value] = t;
                 }
-                // this leads to some Beings having lesser traits. But it all works out well.
+                // Dut to skipping already existing traits, some Beings end up having lesser traits. 
+                // But it all works out well, as the theory is: lesser traits, more chances of 
+                // connection with other beings. Read : theory of few flaws.txt
             }
         }
 

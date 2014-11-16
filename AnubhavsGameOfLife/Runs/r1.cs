@@ -3,13 +3,9 @@ using System.Collections.Generic;
 
 namespace AnubhavsGameOfLife.Runs
 {
-    /// <summary>
-    /// Here, we will create 10^2 beings, and will tell what happens at the end of the communizing
-    /// i.e. what sort of communities will we have? In This case we have pair.
-    /// </summary>
     public class R1
     {
-        private const int BeingCountUnderRun = 10;
+        private const int BeingCountUnderRun = 100;
 
         public static void Run()
         {
@@ -20,7 +16,6 @@ namespace AnubhavsGameOfLife.Runs
                 beings.Add(b);
             }
 
-            // bool HasCommunity = false;
             var allCommunities = new List<Community>();
             for (var i = 0; i < beings.Count -1; ++i)
             {
