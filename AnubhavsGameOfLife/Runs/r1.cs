@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace AnubhavsGameOfLife.Runs
 {
     /// <summary>
-    /// Here, we will create 10^3 beings, and will tell what happens at the end of the communizing
+    /// Here, we will create 10^2 beings, and will tell what happens at the end of the communizing
     /// i.e. what sort of communities will we have? In This case we have pair.
     /// </summary>
     public class R1
