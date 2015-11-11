@@ -1,2 +1,0 @@
-c:\users\asaini\documents\visual studio 2013\Projects\AnubhavsGameOfLifeSolution\AnubhavsGameOfLife\bin\Debug\AnubhavsGameOfLife.exe.config
-c:\users\asaini\documents\visual studio 2013\Projects\AnubhavsGameOfLifeSolution\AnubhavsGameOfLife\obj\Debug\AnubhavsGameOfLife.csprojResolveAssemblyReference.cache
