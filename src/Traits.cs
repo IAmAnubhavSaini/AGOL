@@ -5,17 +5,15 @@ namespace AnubhavsGameOfLife
 {
     public static class TraitFactory
     {
-        private static readonly Random RandomNumberGenerator;
-        private const int UpperLimitForRandom = 100;
-        private const int LowerLimitForRandom = 0;
+		static class Constants{
+			public static readonly Random RandomNumberGenerator = new Random (1);
+	        public const int UpperLimitForRandom = 100;
+			public const int LowerLimitForRandom = 0;
+		}
 
-        static TraitFactory()
-        {
-            RandomNumberGenerator = new Random(1);
-        }
         public static Trait GenerateTrait()
         {
-            var t = (RandomNumberGenerator.Next(LowerLimitForRandom, UpperLimitForRandom) * (Convert.ToInt32(DateTime.Now.Ticks & 0x000000007FFFFFFF))) % UpperLimitForRandom;
+            var t = (Constants.RandomNumberGenerator.Next(Constants.LowerLimitForRandom, Constants.UpperLimitForRandom) * (Convert.ToInt32(DateTime.Now.Ticks & 0x000000007FFFFFFF))) % Constants.UpperLimitForRandom;
             if (t < 0)
             {
                 t *= -1;
@@ -36,13 +34,16 @@ namespace AnubhavsGameOfLife
 
     public class Traits
     {
-        private const int NumberOfTraitsABeingCanHave = 15;
+		static class Constants{
+			public const int NumberOfTraitsABeingCanHave = 15;
+		}
+
         public Dictionary<int, Trait> Persona;
 
         private void Instantiate()
         {
             Persona = new Dictionary<int, Trait>();
-            for (var i = 0; i < NumberOfTraitsABeingCanHave; ++i)
+            for (var i = 0; i < Constants.NumberOfTraitsABeingCanHave; ++i)
             {
                 var t = TraitFactory.GenerateTrait();
                 if (!Persona.ContainsKey(t.Value))

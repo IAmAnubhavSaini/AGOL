@@ -5,12 +5,14 @@ namespace AnubhavsGameOfLife.Runs
 {
     public class R1
     {
-        private const int BeingCountUnderRun = 100;
+		static class Constants{
+			public const int BeingCountUnderRun = 100;
+		}
 
         public static void Run()
         {
             var beings = new List<Being>();
-            for (var i = 0; i < BeingCountUnderRun; ++i)
+            for (var i = 0; i < Constants.BeingCountUnderRun; ++i)
             {
                 var b = new Being();
                 beings.Add(b);

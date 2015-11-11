@@ -2,15 +2,19 @@
 
 namespace AnubhavsGameOfLife.Runs
 {
+
     public class R0
     {
-        private const int MaxNumberOfBeings = 10000;
-        public static void Run()
+		static class Constants{
+			public const int MaxNumberOfBeings = 10000;
+		}
+
+		public static void Run()
         {
             var b1 = new Being();
             var b2 = new Being();
             var i = 0;
-            while (i < MaxNumberOfBeings)
+            while (i < Constants.MaxNumberOfBeings)
             {
                 i++;
                 if (b1.Equals(b2))
