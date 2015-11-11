@@ -3,3 +3,9 @@
 *.suo
 *.txt
 *.cache
+*.mdb
+obj/
+bin/
+*~
+src/AnubhavsGameOfLife.sln
+
